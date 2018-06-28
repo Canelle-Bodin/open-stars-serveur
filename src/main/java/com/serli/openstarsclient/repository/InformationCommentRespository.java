@@ -26,7 +26,7 @@ public interface InformationCommentRespository extends JpaRepository<Information
     /**
      * @param likeComment if like is true or false
      * @param informationPublication publication id
-     * @return number of like
+     * @return number of like for picture
      */
     Long countByLikeCommentAndIdInformationPublication(Boolean likeComment, Long informationPublication);
 
