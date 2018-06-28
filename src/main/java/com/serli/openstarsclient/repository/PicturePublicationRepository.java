@@ -31,4 +31,10 @@ public interface PicturePublicationRepository extends JpaRepository<PicturePubli
      */
     PicturePublication findByIdPublication(Long idpublication);
 
+    /**
+     * @param planete planete
+     * @return a list of all planete's pictures
+     */
+    List<PicturePublication> findByPlanete(String planete);
+
 }

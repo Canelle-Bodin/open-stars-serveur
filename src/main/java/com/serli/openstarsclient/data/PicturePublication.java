@@ -27,6 +27,9 @@ public class PicturePublication{
     @Column(name = "description")
     private String description;
 
+    @Column(name = "planete")
+    private String planete;
+
     @Transient
     private String pseudo;
 
@@ -44,6 +47,14 @@ public class PicturePublication{
         this.pathPicture = pathPicture;
         this.publicationDate = publicationDate;
         this.description = description;
+    }
+
+    public String getPlanete() {
+        return planete;
+    }
+
+    public void setPlanete(String planete) {
+        this.planete = planete;
     }
 
     public Long getIdPublication() {
