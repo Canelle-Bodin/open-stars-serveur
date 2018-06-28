@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "MEMBRE")
 public class User implements Serializable {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "Id_membre")
@@ -33,6 +34,12 @@ public class User implements Serializable {
 	@Column(name = "motdepasse")
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="rasp_user",
+			joinColumns = @JoinColumn(name="rasp_id_membre"),
+			inverseJoinColumns = @JoinColumn(name = "Id_Rasp"))
+	private List<Rasp> rasps;
 
 	@Column(name = "Email")
 	private String email;
@@ -244,4 +251,11 @@ public class User implements Serializable {
 		this.verifyAccount = verifyAccount;
 	}
 
+	public List<Rasp> getRasps() {
+		return rasps;
+	}
+
+	public void setRasps(List<Rasp> rasps) {
+		this.rasps = rasps;
+	}
 }

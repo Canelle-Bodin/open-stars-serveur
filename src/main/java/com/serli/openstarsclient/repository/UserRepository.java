@@ -21,11 +21,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	User findByPseudo(String pseudo);
 
 	/**
-	 * @param pseudo pseudo person
+	 * @param password pseudo person
 	 * @param email email person
 	 * @return class user
 	 */
-	User findByPasswordAndEmail(String pseudo, String email);
+	User findByPasswordAndEmail(String password, String email);
 
 	/**
 	 * @param name person name
