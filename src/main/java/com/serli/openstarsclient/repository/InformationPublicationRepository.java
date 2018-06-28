@@ -24,7 +24,6 @@ public interface InformationPublicationRepository extends JpaRepository<Informat
      * @param likePicture if like is true or false
      * @param idPicture picture id
      * @return number of how many like the picture
-     * test
      */
     Long countBylikePictureAndIdPublication(Boolean likePicture, Long idPicture);
 
