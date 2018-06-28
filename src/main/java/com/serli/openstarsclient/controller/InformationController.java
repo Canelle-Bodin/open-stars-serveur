@@ -34,8 +34,7 @@ public class InformationController {
     @RequestMapping(value = "api/getinfoplanete", method = RequestMethod.POST)
     InformationPlanete infoPlanete(@RequestBody InformationPlanete nomPlanete) {
         String nom = nomPlanete.getNomPlanete();
-        InformationPlanete info = informationPlaneteRepository.findByNomPlanete(nom);
-        return info;
+        return informationPlaneteRepository.findByNomPlanete(nom);
     }
 
     @RequestMapping(value = "api/getpicturesplanete", method = RequestMethod.POST)
